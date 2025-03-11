@@ -204,6 +204,30 @@ def snake_case(text):
   else:
     # Return a TypeError error if the wrong data type was used
     raise TypeError("The snake_case() function expects a string as an argument, please check the data type provided.")
+
+-----
+#Interview
+
+from typing import List, Dict
+
+def sort_jobs_by_priority(jobs: List[Dict[str, int]]) -> List[Dict[str, int]]:
+    if not jobs:
+        raise ValueError("Job list cannot be empty")
+    
+    # Sort jobs by priority in descending order, maintaining order for equal priority
+    return sorted(jobs, key=lambda job: job['priority'], reverse=True)
+
+# Example usage
+jobs = [
+    {'ID': 1, 'priority': 2},
+    {'ID': 2, 'priority': 3},
+    {'ID': 3, 'priority': 1},
+    {'ID': 4, 'priority': 3},
+]
+
+sorted_jobs = sort_jobs_by_priority(jobs)
+print(sorted_jobs)
+-------------------------------------
     
 snake_case("User Name 187")
 ------------------------------------------------------------------------------
